@@ -1,3 +1,8 @@
+<?php
+    require_once('./config/config.php');
+    $query = "SELECT gastos.id, descripcion, cantidad, nombre, fecha FROM gastos LEFT JOIN gastos_categorias ON gastos.categoria = gastos_categorias.id";
+    $resultado = $pdo->query($query);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,39 +30,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php while($row = $resultado->fetch()){ ?>
                         <tr>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
+                            <td><?php echo $row['id']?></td>
+                            <td><?php echo $row['descripcion']?></td>
+                            <td><?php echo $row['cantidad']?></td>
+                            <td><?php echo $row['nombre']?></td>
+                            <td><?php echo $row['fecha']?></td>
                             <td>
                                 <a href="#" class="btn btn-warning">Editar</a>
                                 <a href="#" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
-                         <tr>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>
-                                <a href="#" class="btn btn-warning">Editar</a>
-                                <a href="#" class="btn btn-danger">Eliminar</a>
-                            </td>
-                        </tr>
-                         <tr>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>Prueba</td>
-                            <td>
-                                <a href="#" class="btn btn-warning">Editar</a>
-                                <a href="#" class="btn btn-danger">Eliminar</a>
-                            </td>
-                        </tr>
+                        <?php }; ?>
                     </tbody>
                 </table>
             </div>
