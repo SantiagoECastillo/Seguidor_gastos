@@ -39,7 +39,7 @@
                             <td><?php echo $row['fecha']?></td>
                             <td>
                                 <a href="./formulario-edicion.php?id=<?php echo $row['id']?>" class="btn btn-warning">Editar</a>
-                                <a href="#" class="btn btn-danger">Eliminar</a>
+                                <a href="./config/eliminar-gasto.php?id=<?php echo $row['id']?>" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                         <?php }; ?>
