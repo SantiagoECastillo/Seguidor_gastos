@@ -38,7 +38,7 @@
                             <td><?php echo $row['nombre']?></td>
                             <td><?php echo $row['fecha']?></td>
                             <td>
-                                <a href="#" class="btn btn-warning">Editar</a>
+                                <a href="./formulario-edicion.php?id=<?php echo $row['id']?>" class="btn btn-warning">Editar</a>
                                 <a href="#" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
