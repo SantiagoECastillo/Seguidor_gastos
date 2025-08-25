@@ -9,12 +9,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Gestor de gastos</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row mt-5">
-            <h1>Gastos <a href="#" class="btn btn-primary">Añadir</a></h1>
+            <h1>Gastos <a href="./forrmulario-insercion.php" class="btn btn-primary">Añadir</a></h1>
         </div>
         <div class="row mt-5">
             <div class="col">
