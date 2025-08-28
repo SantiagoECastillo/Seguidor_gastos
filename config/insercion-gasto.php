@@ -6,5 +6,5 @@ $descripcion = $_POST['descripcion'];
 $query = "INSERT INTO gastos (cantidad, categoria, descripcion) VALUES ('$cantidad', '$categoria', '$descripcion')";
 $resultado = $pdo->query($query);
 
-header("Location: ../index.php");
+header("Location: ../modulos/gastos/index.php");
 ?>

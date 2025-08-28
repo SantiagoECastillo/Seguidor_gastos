@@ -1,7 +1,12 @@
 <?php
-    require_once('./config/config.php');
+    require_once('../../config/config.php');
+    $id = $_GET['id'];  
     $query = "SELECT * FROM gastos_categorias";
     $resultado = $pdo->query($query);
+
+    $query2 = "SELECT * FROM gastos WHERE id = $id";
+    $resultado2 = $pdo->query($query2);
+    $record = $resultado2->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -9,24 +14,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Formulario</title>
+    <title>Edicion</title>
 </head>
 <body>
     <div class="container">
         <div class="row mt-5">
             <div class="col">
-                <h2>Gastos <a href="index.php" class="btn btn-dark">Regresar</a></h2>
+                <h2>Gastos <a href="./index.php" class="btn btn-dark">Regresar</a></h2>
             </div>
         </div>
          
-        <form action="./config/insercion-gasto.php" method="POST">
+        <form action="../../config/edicion-gasto.php" method="POST">
             <div class="row mt-5"> 
                 <div class="col-6">
                     <label for="cantidad" class="form-label">Cantidad</label>
-                    <input type="text" class="form-control" name="cantidad" id="cantidad">
+                    <input type="text" class="form-control" name="cantidad" id="cantidad" value="<?php echo $record['cantidad'];?>">
                 </div>
                 <div class="col-6 mb-3">
-                    <label id="categoria" for="categoria" class="form-label">Categoria</label>
+                    <label for="categoria" class="form-label">Categoria</label>
                     <select id="" class="form-select" name="categoria" id="categoria">
                         <option value="0" selected>Seleccione una opcion</option>
                         <?php
@@ -39,10 +44,11 @@
                     </select>
                 </div>
                 <div class="col-12 mb-3">
-                    <label id="descripcion" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" name="descripcion" id="descripcion">
+                    <label class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="descripcion" value="<?php echo $record['descripcion'] ?>">
                 </div>
                 <div class="col-12">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <button type="submit" class="btn btn-success">Guardar</button>
                 </div>
             </div>
