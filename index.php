@@ -14,14 +14,14 @@
             <h2 class="h3 mb-3 fw-normal">Por favor, Iniciar Sesion</h2>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="ejemplo@gmai.com">
+                <input type="email" class="form-control" id="floatingInput" placeholder="ejemplo@gmail.com" name="email">
                 <label for="floatingInput">Correo electronico</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="contra">
                 <label for="floatingPassword">Contraseña</label>
             </div>
-    
+
             <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2017-2025</p>
         </form>
